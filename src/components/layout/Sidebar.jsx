@@ -60,7 +60,6 @@ const Sidebar = () => {
                     </div>
                 </div>
 
-                {/* Menu Items */}
                 <nav className="flex-1 py-4">
                     {menuItems.map((item) => (
                         <div key={item.label}>
@@ -77,7 +76,6 @@ const Sidebar = () => {
                         </div>
                     ))}
 
-                    {/* Candidates with submenu */}
                     <div>
                         <button
                             onClick={() => setCandidatesOpen(!candidatesOpen)}
