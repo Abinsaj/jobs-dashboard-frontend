@@ -5,6 +5,8 @@ export default function Button({ children, variant = "primary", icon, onClick, c
     primary: "bg-blue-600 hover:bg-blue-700 text-white",
     secondary: "bg-gray-700 hover:bg-gray-600 text-white",
     outline: "border border-gray-600 hover:bg-gray-800 text-white",
+    draftbutton: 'bg-[#000B37] text-gray-100',
+    postbutton:'bg-[#0032FB] text-gray-100'
   }
 
   return (

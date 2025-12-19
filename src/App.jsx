@@ -4,7 +4,8 @@ import JobsDashboard from './pages/JobsDashboard'
 function App() {
 
   return (
-    <JobsDashboard/>
+      <JobsDashboard />
+
   )
 }
 

@@ -1,14 +1,15 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import PageLayout from '../components/layout/PageLayout'
 import Header from '../components/layout/Header'
 import SummaryCard from '../components/dashboard/SummaryCard'
 import FiltersBar from '../components/dashboard/FiltersBar'
 import { mockJobs } from '../data/jobs.mock'
 import { useJobsFilter } from '../hooks/useJobsFilter'
-// import Tabs from '../components/dashboard/Tabs'
 import JobsGrid from '../components/dashboard/JobsGrid'
 
 const JobsDashboard = () => {
+
+  const [isLoading, setIsLoading] = useState(true)
 
   const {
     filteredJobs,
@@ -24,6 +25,13 @@ const JobsDashboard = () => {
     setActiveTab,
     resetFilters
   } = useJobsFilter(mockJobs)
+
+  useEffect(()=>{
+    const timer =setTimeout(() => {
+      setIsLoading(false)
+    }, 1000);
+    return ()=> clearTimeout(timer)
+  },[])
 
   const stats = useMemo(() => {
     const activeJobs = mockJobs.filter((job) => job.status === "active")
@@ -64,8 +72,7 @@ const JobsDashboard = () => {
           resetFilters={resetFilters}
           counts={counts}
         />
-        {/* <Tabs activeTab={activeTab} setActiveTab={setActiveTab} /> */}
-          <JobsGrid jobs={filteredJobs} />
+          <JobsGrid jobs={filteredJobs} isLoading={isLoading} />
       </div>
     </PageLayout>
   )

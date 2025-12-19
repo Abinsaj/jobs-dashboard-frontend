@@ -27,13 +27,13 @@ const SummaryCard = ({stats, draftCount}) => {
         />
       </div>
 
-      <div className="flex lg:flex-col gap-3 justify-start lg:justify-start">
-        <Button variant="secondary" icon={<FileEdit size={18} />}>
+      <div className="flex lg:flex-col gap-3 justify-center lg:justify-center">
+        <Button variant="draftbutton" icon={<FileEdit size={18} />}>
           <span className="hidden sm:inline">Drafts</span>
           <span className="sm:hidden">Draft</span>
           <span className="bg-gray-600 px-2 py-0.5 rounded text-xs ml-1">{draftCount}</span>
         </Button>
-        <Button variant="primary" icon={<Plus size={18} />}>
+        <Button variant="postbutton" icon={<Plus size={18} />}>
           <span className="hidden sm:inline">Post New Job</span>
           <span className="sm:hidden">Post</span>
         </Button>

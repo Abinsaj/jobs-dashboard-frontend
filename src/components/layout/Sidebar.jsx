@@ -15,26 +15,43 @@ const Sidebar = () => {
 
     return (
         <>
-            <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden fixed top-4 left-4 z-50 bg-gray-800 p-2 rounded-lg text-white"
-            >
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-sidebar  px-4 py-3">
+                <div className="relative flex items-center justify-center">
+
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="absolute left-0 bg-gray-800 p-2 rounded-lg text-white"
+                    >
+                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+
+                    <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <div className="w-4 h-4 bg-black rounded-full"></div>
+                        </div>
+                        <span className="text-white text-xl font-semibold">Logoipsum</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+
             {mobileMenuOpen && (
-                <div className='lg:hidden fixed inset-0 bg-black/50 z-30' />
+                <div className="lg:hidden fixed inset-0 bg-black/50 z-30 mt-[60px]" onClick={() => setMobileMenuOpen(false)} />
             )}
 
             <aside
                 className={`
-                    w-64 bg-sidebar h-screen flex flex-col border-r border-gray-800 z-40
-                    fixed left-0 top-0 transition-transform duration-300
+                    w-64 bg-sidebar flex flex-col  z-40
+                    fixed left-0 transition-transform duration-300
+                    lg:top-0
+                    top-[60px] lg:h-screen h-[calc(100vh-60px)]
                     ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}
                     lg:translate-x-0
-                `}
+                    `}
             >
-
-                <div className="p-6 ">
+                <div className="hidden lg:block p-6 ">
                     <div className="flex items-center gap-2">
                         <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                             <div className="w-4 h-4 bg-black rounded-full"></div>
@@ -43,6 +60,7 @@ const Sidebar = () => {
                     </div>
                 </div>
 
+                {/* Menu Items */}
                 <nav className="flex-1 py-4">
                     {menuItems.map((item) => (
                         <div key={item.label}>
@@ -59,6 +77,7 @@ const Sidebar = () => {
                         </div>
                     ))}
 
+                    {/* Candidates with submenu */}
                     <div>
                         <button
                             onClick={() => setCandidatesOpen(!candidatesOpen)}
@@ -92,10 +111,13 @@ const Sidebar = () => {
                     </div>
                 </nav>
 
-                <div className="p-4 ">
-                    <div className="flex items-center gap-3 rounded-xl bg-gray-800 p-2">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl"></div>
-                        <div className="flex-1">
+                <div className="p-4  ">
+                    <div className="flex items-center gap-3 bg-[#232324] p-2 rounded-xl">
+                        <img
+                            src="/user.jpg"  
+                            alt="User avatar"
+                            className="w-10 h-10 rounded-xl object-cover"
+                        />                        <div className="flex-1">
                             <p className="text-white text-sm font-medium">User name</p>
                             <p className="text-gray-400 text-xs flex items-center gap-1">
                                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
@@ -105,7 +127,6 @@ const Sidebar = () => {
                         <ChevronDown size={16} className="text-gray-400" />
                     </div>
                 </div>
-
             </aside>
         </>
 

@@ -2,9 +2,9 @@ import React from 'react'
 
 const Badge = ({ children, variant = "default", icon }) => {
   const variants = {
-    default: "bg-gray-700 text-gray-200",
-    primary: "bg-blue-900/50 text-blue-300",
-    success: "bg-green-900/50 text-green-300",
+    default: "bg-[#303822] text-gray-200",
+    primary: "bg-[#22382E] text-gray-200",
+    success: "bg-[#372238] text-gray-200",
   }
 
   return (

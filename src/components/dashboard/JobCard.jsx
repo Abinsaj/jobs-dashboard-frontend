@@ -19,10 +19,10 @@ const JobCard = ({job}) => {
         <Badge variant="default" icon={<Briefcase size={12} />}>
           {job.employmentType}
         </Badge>
-        <Badge variant="default" icon={<DollarSign size={12} />}>
+        <Badge variant="primary" icon={<DollarSign size={12} />}>
           {job.salaryMin} - {job.salaryMax} {job.currency}
         </Badge>
-        <Badge variant="default" icon={<Calendar size={12} />}>
+        <Badge variant="success" icon={<Calendar size={12} />}>
           {job.experienceMin} - {job.experienceMax} Years
         </Badge>
       </div>

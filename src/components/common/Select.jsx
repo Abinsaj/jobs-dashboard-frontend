@@ -7,9 +7,8 @@ const Select = ({value, onChange, options, placeholder}) => {
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="appearance-none bg-[#1a1a1a] border border-gray-700 rounded-lg px-3 md:px-4 py-2.5 pr-10 text-white text-sm  "
-      >
-        <option value="">{placeholder}</option>
+        className="appearance-none bg-[#1a1a1a] rounded-lg  md:px-4 py-2.5 pr-10 text-gray-500 text-xs border-0 outline-none ring-0 focus:border-0 focus:outline-none focus:ring-0 ">
+        <option className='text-sm' value="">{placeholder}</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
