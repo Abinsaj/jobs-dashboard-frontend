@@ -8,7 +8,7 @@ const Badge = ({ children, variant = "default", icon }) => {
   }
 
   return (
-    <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${variants[variant]}`}>
+    <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-md text-xs font-medium ${variants[variant]}`}>
       {icon}
       {children}
     </span>

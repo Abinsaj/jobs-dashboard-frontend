@@ -2,20 +2,24 @@ import { Briefcase, Calendar, DollarSign, MoreVertical } from 'lucide-react'
 import React from 'react'
 import Badge from '../common/Badge'
 
-const JobCard = ({job}) => {
+const JobCard = ({ job }) => {
   return (
-    <div className="bg-[#1a1a1a] rounded-xl p-4 md:p-6 border border-gray-800 hover:border-gray-700 transition-all">
-      <div className="flex justify-between items-start mb-4">
+    <div className="bg-[#1a1a1a] rounded-md md:p-0.5 transition-all flex flex-col h-full">
+      {/* Header */}
+      <div className="flex justify-between p-2 items-start mb-2">
         <div className="flex-1 min-w-0">
-          <h3 className="text-white text-base md:text-lg font-semibold mb-1 truncate">{job.title}</h3>
-          <p className="text-gray-400 text-xs md:text-sm">Posted : {job.postedTime}</p>
+          <h3 className="text-white text-base md:text-lg font-semibold mb-1 truncate">
+            {job.title}
+          </h3>
+          <p className="text-gray-400 text-xs md:text-sm">Posted: {job.postedTime}</p>
         </div>
         <button className="text-gray-400 hover:text-white ml-2 flex-shrink-0">
           <MoreVertical size={20} />
         </button>
       </div>
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      {/* Badges */}
+      <div className="flex flex-wrap p-2 gap-2 mb-2">
         <Badge variant="default" icon={<Briefcase size={12} />}>
           {job.employmentType}
         </Badge>
@@ -27,9 +31,13 @@ const JobCard = ({job}) => {
         </Badge>
       </div>
 
-      <p className="text-gray-300 text-xs md:text-sm mb-4 md:mb-6 line-clamp-2">{job.description}</p>
+      {/* Description */}
+      <p className="text-gray-300 text-xs md:text-sm px-2 mb-2 line-clamp-2">
+        {job.description}
+      </p>
 
-      <div className="flex justify-between pt-4 border-t border-gray-800">
+      {/* Bottom stats */}
+      <div className="mt-auto mb-px flex items-start pt-2 bg-gradient-to-br from-black/90 to-black/50 w-full p-5 rounded-md">
         <div className="text-center flex-1">
           <p className="text-white text-lg md:text-xl font-semibold">{job.applied}</p>
           <p className="text-gray-400 text-xs">Applied</p>

@@ -83,7 +83,7 @@ const FiltersBar = ({
                     <RotateCcw size={20} className="text-white" />
                 </button>
 
-                <div className="flex items-center gap-2 px-3 py-2 bg-gray-800 rounded-lg text-gray-300 text-sm">
+                <div className="flex items-center gap-2 px-3 py-2 bg-gray-800 rounded-lg  text-gray-300 text-sm">
                     {activeIcon !== undefined &&
                         <activeIcon.icon size={15} />
                     }
@@ -149,7 +149,7 @@ const FiltersBar = ({
                     </button>
                 </div>
 
-                <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg text-gray-300 text-sm whitespace-nowrap">
+                <div className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg md:max-h-10 text-gray-300 text-sm whitespace-nowrap">
                     {activeIcon !== undefined &&
                         <activeIcon.icon size={15} />
                     }
