@@ -52,7 +52,7 @@ const FiltersBar = ({
     const tabs = [
         { icon: Briefcase, id: 'all', value: "all", count: mockJobs.length },
         { icon: Briefcase, id: "active", value: "active", count: counts.active },
-        { icon: FileEdit, id: "draft", value: "drafts", count: counts.draft },
+        { icon: FileEdit, id: "draft", value: "draft", count: counts.draft },
         { icon: Archive, id: "closed", value: "closed", count: counts.closed },
     ]
 

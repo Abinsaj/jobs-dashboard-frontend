@@ -11,19 +11,19 @@ const SummaryCard = ({stats, draftCount}) => {
           title="Total Jobs Posted"
           value={stats.totalJobs}
           icon={Briefcase}
-          bgColor="bg-gradient-to-br from-indigo-900/60 to-indigo-800/40"
+          bgColor="bg-gradient-to-br from-indigo-300/60 to-indigo-600/40"
         />
         <StatCard
           title="Application received"
           value={stats.applicationsReceived}
           icon={FileText}
-          bgColor="bg-gradient-to-br from-rose-900/60 to-rose-800/40"
+          bgColor="bg-gradient-to-br from-rose-400/60 to-rose-700/40"
         />
         <StatCard
           title="Hired"
           value={stats.hired}
           icon={UserCheck}
-          bgColor="bg-gradient-to-br from-teal-900/60 to-teal-800/40"
+          bgColor="bg-gradient-to-br from-teal-600/60 to-teal-700/40"
         />
       </div>
 
