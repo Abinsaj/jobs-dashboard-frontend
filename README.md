@@ -2,6 +2,9 @@
 
 A fully functional and responsive Jobs Dashboard built with React, Vite, and Tailwind CSS. Built for managing and visualizing job listings with filtering, tabs, and detailed job cards.
 
+## Live Preview
+
+You can view the live project here: [Jobs Dashboard Live Preview](https://jobs-dashboard-frontend.vercel.app/)
 
 ## Features
 
