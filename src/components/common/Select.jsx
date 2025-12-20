@@ -1,12 +1,15 @@
 import { ChevronDown } from 'lucide-react'
 import React from 'react'
 
-const Select = ({ value, onChange, options, placeholder }) => {
+const Select = ({ value, onChange, options, placeholder, setIsLoading }) => {
   return (
     <div className="relative w-full sm:w-auto">
       <select
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => {
+          onChange(e.target.value)
+          setIsLoading(true)
+        }}
         className={` appearance-none bg-[#1a1a1a] rounded-lg px-4 py-2.5 pr-12 min-w-[160px] text-xs border-0 outline-none focus:ring-0
     ${value === ""
             ? "text-gray-500"

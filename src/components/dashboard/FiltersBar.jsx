@@ -1,4 +1,4 @@
-import React, { act, useState } from 'react'
+import React, { act, useEffect, useState } from 'react'
 import Select from '../common/Select'
 import { Archive, Briefcase, FileEdit, Plus, RotateCcw, Search, SlidersHorizontal, X } from 'lucide-react'
 import SearchInput from '../common/SearchInput'
@@ -16,8 +16,10 @@ const FiltersBar = ({
     activeTab,
     setActiveTab,
     resetFilters,
-    counts
+    counts,
+    setIsLoading
 }) => {
+
 
     const [mobileFilterOpen, setMobileFilterOpen] = useState(false)
 
@@ -64,6 +66,7 @@ const FiltersBar = ({
                 <SearchInput
                     value={searchQuery}
                     onChange={setSearchQuery}
+                    setIsLoading={setIsLoading}
                     placeholder="Enter a job title"
                 />
             </div>
@@ -78,7 +81,12 @@ const FiltersBar = ({
                 </button>
 
                 <button
-                    onClick={() => resetFilters()}
+                    onClick={() => {
+
+                        setIsLoading(true)
+                        resetFilters()
+                    }
+                    }
                     className="bg-gray-800 flex items-center p-2.5 gap-2 px-4 py-2 rounded-lg">
                     <RotateCcw size={20} className="text-white" />
                 </button>
@@ -117,6 +125,7 @@ const FiltersBar = ({
                         <SearchInput
                             value={searchQuery}
                             onChange={setSearchQuery}
+                            setIsLoading={setIsLoading}
                             placeholder="Enter a job title"
                         />
                     </div>
@@ -125,6 +134,7 @@ const FiltersBar = ({
                         value={selectedJobProfile}
                         onChange={setSelectedJobProfile}
                         options={profileOptions}
+                        setIsLoading={setIsLoading}
                         placeholder="Job Profile"
                     />
 
@@ -132,6 +142,7 @@ const FiltersBar = ({
                         value={selectedExperience}
                         onChange={setSelectedExperience}
                         options={experienceOptions}
+                        setIsLoading={setIsLoading}
                         placeholder="Exp 2 - 6"
                     />
 
@@ -139,11 +150,16 @@ const FiltersBar = ({
                         value={selectedEmployementType}
                         onChange={setSelectedEmploymentType}
                         options={employmentOptions}
+                        setIsLoading={setIsLoading}
                         placeholder="Employment type"
                     />
 
                     <button
-                        onClick={() => resetFilters()}
+                        onClick={() => {
+                            setIsLoading(true)
+                            resetFilters() 
+                          }
+                        }
                         className="bg-gray-800 p-2.5 rounded-lg">
                         <RotateCcw size={20} className="text-white" />
                     </button>
@@ -155,7 +171,11 @@ const FiltersBar = ({
                     }
                     <select
                         value={tabs.id}
-                        onChange={(e) => setActiveTab(e.target.value)}
+                        onChange={(e) =>{ 
+                            setActiveTab(e.target.value)
+                            setIsLoading(true)
+                        }
+                    }
                         className='appearance-none bg-transparent border-gray-800 focus:outline-none focus:border-gray-600 '
                         name="" id=""
                     >
@@ -203,6 +223,7 @@ const FiltersBar = ({
                                 value={selectedJobProfile}
                                 onChange={setSelectedJobProfile}
                                 options={profileOptions}
+                                setIsLoading={setIsLoading}
                                 placeholder="Job Profile"
                             />
 
@@ -210,6 +231,7 @@ const FiltersBar = ({
                                 value={selectedExperience}
                                 onChange={setSelectedExperience}
                                 options={experienceOptions}
+                                setIsLoading={setIsLoading}
                                 placeholder="Experience"
                             />
 
@@ -217,6 +239,7 @@ const FiltersBar = ({
                                 value={selectedEmployementType}
                                 onChange={setSelectedEmploymentType}
                                 options={employmentOptions}
+                                setIsLoading={setIsLoading}
                                 placeholder="Employment type"
                             />
 

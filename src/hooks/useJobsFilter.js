@@ -26,9 +26,6 @@ export const useJobsFilter = (jobs) => {
       if (query) {
         const searchableText = `
           ${job.title}
-          ${job.companyName}
-          ${job.location}
-          ${job.profile}
         `.toLowerCase()
 
         if (!searchableText.includes(query)) {

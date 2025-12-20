@@ -31,7 +31,7 @@ const JobsDashboard = () => {
       setIsLoading(false)
     }, 1000);
     return ()=> clearTimeout(timer)
-  },[])
+  },[resetFilters,selectedEmployementType,selectedExperience,selectedJobProfile,activeTab])
 
   const stats = useMemo(() => {
     const activeJobs = mockJobs.filter((job) => job.status === "active")
@@ -71,6 +71,7 @@ const JobsDashboard = () => {
           setActiveTab={setActiveTab}
           resetFilters={resetFilters}
           counts={counts}
+          setIsLoading={setIsLoading}
         />
           <JobsGrid jobs={filteredJobs} isLoading={isLoading} />
       </div>
