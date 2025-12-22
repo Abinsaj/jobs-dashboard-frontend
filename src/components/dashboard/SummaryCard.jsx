@@ -3,9 +3,9 @@ import StatCard from './StatCard'
 import { Briefcase, FileEdit, FileText, Plus, UserCheck } from 'lucide-react'
 import Button from '../common/Button'
 
-const SummaryCard = ({stats, draftCount}) => {
+const SummaryCard = ({ stats, draftCount }) => {
   return (
-       <div className="flex flex-col lg:flex-row gap-4 md:gap-6 mb-6 md:mb-8 items-stretch">
+    <div className="flex flex-col lg:flex-row gap-4 md:gap-6 mb-6 md:mb-8 items-stretch">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 flex-1">
         <StatCard
           title="Total Jobs Posted"
@@ -27,7 +27,7 @@ const SummaryCard = ({stats, draftCount}) => {
         />
       </div>
 
-      <div className="flex lg:flex-col gap-3 justify-center lg:justify-center">
+      <div className="flex lg:flex-row gap-3 lg:self-end justify-center lg:justify-end">
         <Button variant="draftbutton" icon={<FileEdit size={18} />}>
           <span className="hidden sm:inline">Drafts</span>
           <span className="sm:hidden">Draft</span>
