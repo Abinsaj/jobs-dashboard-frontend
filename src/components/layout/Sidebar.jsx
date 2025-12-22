@@ -26,8 +26,10 @@ const Sidebar = () => {
                     </button>
 
                     <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                            <div className="w-4 h-4 bg-black rounded-full"></div>
+                        <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <div className="w-7 h-7 ml-0.5 bg-black rounded-full flex justify-center items-center">
+                                <div className="w-4 h-4 ml-1.5 bg-white rounded-full"></div>
+                            </div>
                         </div>
                         <span className="text-white text-xl font-semibold">Logoipsum</span>
                     </div>
@@ -53,8 +55,10 @@ const Sidebar = () => {
             >
                 <div className="hidden lg:block p-6 ">
                     <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                            <div className="w-4 h-4 bg-black rounded-full"></div>
+                        <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <div className="w-7 h-7 ml-0.5 bg-black rounded-full flex justify-center items-center">
+                                <div className="w-4 h-4 ml-1.5 bg-white rounded-full"></div>
+                            </div>
                         </div>
                         <span className="text-white text-xl font-semibold">Logoipsum</span>
                     </div>
